@@ -15,14 +15,6 @@ public class HitController : MonoBehaviour
         StartCoroutine(PlayerHitAnim());
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(PlayerHitAnim());
-        }
-    }
-
     private IEnumerator PlayerHitAnim()
     {
         boxingAnim.enabled = true;
