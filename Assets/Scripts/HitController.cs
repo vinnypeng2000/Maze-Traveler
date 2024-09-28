@@ -19,18 +19,24 @@ public class HitController : MonoBehaviour
     {
         boxingAnim.enabled = true;
         boxingAnim.Play("boxing");
-        boxingAnim.transform.DOMoveZ(1f, 0.5f);
+        //boxingAnim.transform.DOMoveZ(1f, 0.5f);
         yield return new WaitForSeconds(interval);
-        boxingAnim.transform.DOMoveZ(0f, 1f);
+        //boxingAnim.transform.DOMoveZ(0f, 1f);
         getHitAnim.enabled = true;
         getHitAnim.Play("get_hit");
         StartCoroutine(EndHit());
+        StartCoroutine(EndBoxing());
     }
 
     private IEnumerator EndHit()
     {
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.2f);
         getHitAnim.enabled = false;
+    }
+
+    private IEnumerator EndBoxing()
+    {
+        yield return new WaitForSeconds(2.1f - interval);
         boxingAnim.enabled = false;
         StartCoroutine(PlayerHitAnim());
     }
