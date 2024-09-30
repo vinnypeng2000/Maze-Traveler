@@ -9,9 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Party.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+<<<<<<< HEAD
+    path: Assets/Scenes/FloatClassroom.unity
+    guid: c15ec8a87a6b9374a9a8ec9f68d36305
+=======
     path: Assets/Scenes/Tielong.unity
     guid: 45112035052321c46869b2baa3776fd0
   - enabled: 1
     path: Assets/Scenes/Classroom.unity
     guid: 58dfe3609b2300644ad2033cafe62ba4
+>>>>>>> main
   m_configObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Polygon Arsenal/Demo/Scenes/- Misc/xPolyColorVariations.unity.meta
+guid: 52656ddfdfc6c32409e41012147571cb
+========
 guid: 0851605490a599b46b6ac5cb681d93ea
+>>>>>>>> main:Assets/TextMesh Pro/Examples & Extras/Scenes/26 - Dropdown Placeholder Example.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
