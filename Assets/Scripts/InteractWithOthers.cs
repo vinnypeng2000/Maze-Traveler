@@ -12,10 +12,11 @@ public class InteractWithOthers : MonoBehaviour
     public string scenename;
     public bool entered;
     public Volume volume;
-    public AnimationCurve vignetteCurve;
+    [SerializeField] private AnimationCurve vignetteCurve;
 
     private float vignetteCloseTime;
     private Vignette vignette;
+    private float timer = 0f; 
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +24,28 @@ public class InteractWithOthers : MonoBehaviour
         text.SetActive(false);
         entered = false;
         volume.profile.TryGet(out vignette);
+        vignetteCloseTime = 2.0f;
+        vignetteCurve = AnimationCurve.EaseInOut(0, 0, 2.0f, 100);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (entered && Input.GetKeyDown("e"))
+        if (entered && Input.GetKey("e"))
         {
-            vignetteCloseTime = Time.realtimeSinceStartup;
-            float vignetteIntensity = vignetteCurve.Evaluate(Time.realtimeSinceStartup - vignetteCloseTime);
-            vignette.intensity.value = vignetteIntensity;
+           
+
+            // Optional: Reset or pause timer once curve reaches the end
+            // if (timer >= vignetteCloseTime)
+            // {
+            //     timer = vignetteCloseTime; // Stops the timer once it reaches the end of the curve
+            // }
+            // vignetteCloseTime = Time.realtimeSinceStartup;
+            // float vignetteIntensity = vignetteCurve.Evaluate(Time.realtimeSinceStartup - vignetteCloseTime);
+            // vignette.intensity.value = vignetteIntensity;
+
             StartCoroutine("EnterMind");
+            Debug.Log("HERE");
         }
     }
 
@@ -57,8 +69,19 @@ public class InteractWithOthers : MonoBehaviour
 
     IEnumerator EnterMind()
     {
-        
+         timer += Time.deltaTime;
+
+        // Calculate the normalized time (between 0 and 1)
+        float normalizedTime = Mathf.Clamp01(timer / vignetteCloseTime); // Prevents overshooting beyond 1
+
+        // Evaluate the vignette intensity based on the animation curve
+        float vignetteIntensity = vignetteCurve.Evaluate(normalizedTime);
+        Debug.Log("vignetteIntensity: " + vignetteIntensity);
+        vignette.intensity.value = vignetteIntensity;
+        if (vignetteIntensity > 1)
+        {
+            SceneManager.LoadScene(scenename);
+        }
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(scenename);
     }
 }
