@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Polygon Arsenal/Demo/Scenes/- Misc/xPolyExplosions.unity.meta
 guid: d69d74d59c06f5a42baa4ba1d304ffcb
+========
+guid: 0fd7f7d3bb315624e8c1a1d35dde79e8
+folderAsset: yes
+>>>>>>>> main:Assets/Materials.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
