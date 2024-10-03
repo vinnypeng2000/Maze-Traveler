@@ -33,19 +33,19 @@ public class InteractWithOthers : MonoBehaviour
     {
         if (entered && Input.GetKey("e"))
         {
-           
+            timer += Time.deltaTime;
 
-            // Optional: Reset or pause timer once curve reaches the end
-            // if (timer >= vignetteCloseTime)
-            // {
-            //     timer = vignetteCloseTime; // Stops the timer once it reaches the end of the curve
-            // }
-            // vignetteCloseTime = Time.realtimeSinceStartup;
-            // float vignetteIntensity = vignetteCurve.Evaluate(Time.realtimeSinceStartup - vignetteCloseTime);
-            // vignette.intensity.value = vignetteIntensity;
+            // Calculate the normalized time (between 0 and 1)
+            float normalizedTime = Mathf.Clamp01(timer / vignetteCloseTime); // Prevents overshooting beyond 1
 
-            StartCoroutine("EnterMind");
-            Debug.Log("HERE");
+            // Evaluate the vignette intensity based on the animation curve
+            float vignetteIntensity = vignetteCurve.Evaluate(normalizedTime);
+            Debug.Log("vignetteIntensity: " + vignetteIntensity);
+            vignette.intensity.value = vignetteIntensity;
+            if (vignetteIntensity > 2)
+            {
+                SceneManager.LoadScene(scenename);
+            }
         }
     }
 
@@ -64,24 +64,7 @@ public class InteractWithOthers : MonoBehaviour
         {
             text.SetActive(false);
             entered = false;
+            vignette.intensity.value = 0;
         }
-    }
-
-    IEnumerator EnterMind()
-    {
-         timer += Time.deltaTime;
-
-        // Calculate the normalized time (between 0 and 1)
-        float normalizedTime = Mathf.Clamp01(timer / vignetteCloseTime); // Prevents overshooting beyond 1
-
-        // Evaluate the vignette intensity based on the animation curve
-        float vignetteIntensity = vignetteCurve.Evaluate(normalizedTime);
-        Debug.Log("vignetteIntensity: " + vignetteIntensity);
-        vignette.intensity.value = vignetteIntensity;
-        if (vignetteIntensity > 1)
-        {
-            SceneManager.LoadScene(scenename);
-        }
-        yield return new WaitForSeconds(2.0f);
     }
 }
