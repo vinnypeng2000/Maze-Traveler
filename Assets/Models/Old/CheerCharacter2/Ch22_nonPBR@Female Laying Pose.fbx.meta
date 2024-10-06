@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: 4145dd40c44e62a428220bc066aeb095
+guid: 9c5144b41c380744387fd51eddd7e651
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch22_body
-    second: {fileID: 2100000, guid: 9792d3aa29124c341a0006bddb2366ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch22_hair
-    second: {fileID: 2100000, guid: e1faae2e26b5ac54cb7b71c39cdb239c, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch22_1001_Diffuse
-    second: {fileID: 2800000, guid: 68fdd460f55082a4abb6723734e2ea85, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch22_1001_Glossiness
-    second: {fileID: 2800000, guid: 780a966d993c2034497baecc3e5e4583, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch22_1001_Normal
-    second: {fileID: 2800000, guid: 7aafce8858470454aa403e882478c652, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch22_1001_Specular
-    second: {fileID: 2800000, guid: 8ef81251661c447458d3111dc14677e7, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch22_1002_Diffuse
-    second: {fileID: 2800000, guid: 4ae3eade1d2a5a147bd206a6fd408711, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch22_1002_Normal
-    second: {fileID: 2800000, guid: f2d78189ad251c740b44df9d343a59ea, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -117,9 +77,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 7f74aa32eb34e8b4fa02eb3561dcd5ba
-  - 9c5144b41c380744387fd51eddd7e651
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -913,11 +871,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 4145dd40c44e62a428220bc066aeb095, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
