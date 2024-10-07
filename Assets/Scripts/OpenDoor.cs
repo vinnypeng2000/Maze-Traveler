@@ -23,10 +23,10 @@ public class OpenDoor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("TOUCH");
+            // Debug.Log("TOUCH");
             if (Input.GetKeyDown("o"))
             {
-                Debug.Log("Pressed O");
+                // Debug.Log("Pressed O");
                 transform.Rotate(xAngle, yAngle, zAngle);
             }
         }

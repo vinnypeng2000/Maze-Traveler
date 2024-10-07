@@ -8662,6 +8662,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9d9a1a0268382354db3901f49be6444b, type: 2}
+    - target: {fileID: 4441528752515535490, guid: b248845856e6f294f9dddec37ed74ac7, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6919928876564140610, guid: b248845856e6f294f9dddec37ed74ac7, type: 3}
       propertyPath: m_Name
       value: Peter
@@ -10263,7 +10267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  jumpForce: 750
+  jumpForce: 250
   anim: {fileID: 1859704732}
   mouseSensitivity: 2
   cameraTransform: {fileID: 1693865223}

@@ -45,7 +45,7 @@ public class InteractWithOthers : MonoBehaviour
 
             // Evaluate the vignette intensity based on the animation curve
             float vignetteIntensity = vignetteCurve.Evaluate(normalizedTime);
-            Debug.Log("vignetteIntensity: " + vignetteIntensity);
+            // Debug.Log("vignetteIntensity: " + vignetteIntensity);
             vignette.intensity.value = vignetteIntensity;
 
             playerStartPosition = player.transform.position;
