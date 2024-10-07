@@ -16,7 +16,6 @@ namespace Church
 
         private void Awake()
         {
-            RiseEvent += OnRiseEvent;
             FallTrigger.FallEvent += OnFallEvent;
         }
 
@@ -28,7 +27,7 @@ namespace Church
             }
         }
 
-        private void OnRiseEvent()
+        public void OnMollyRiseTrigger()
         {
             _isRising = true;
             var pathVectors = new Vector3[10];
@@ -38,8 +37,6 @@ namespace Church
             }
 
             transform.DOPath(pathVectors, riseSpeed);
-            // transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
-            // transform.DOLocalMove(new Vector3(0.27363804f,1.48200035f,3.35067821f), 1f);
         }
 
         private void OnFallEvent()

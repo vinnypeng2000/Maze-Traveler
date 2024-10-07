@@ -9,8 +9,11 @@ namespace Church
 
         private void OnCollisionEnter(Collision other)
         {
-            mesh1.enabled = true;
-            mesh2.enabled = true;
+            if (other.gameObject.CompareTag("Player"))
+            {
+                mesh1.enabled = true;
+                mesh2.enabled = true;
+            }
         }
     }
 }
