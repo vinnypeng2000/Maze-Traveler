@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using TMPro;
 
 public class InteractWithOthers : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class InteractWithOthers : MonoBehaviour
 
     private float vignetteCloseTime;
     private Vignette vignette;
-    private float timer = 0f; 
+    private float timer = 0f;
+
+    private Vector3 playerStartPosition;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,7 @@ public class InteractWithOthers : MonoBehaviour
         volume.profile.TryGet(out vignette);
         vignetteCloseTime = 2.0f;
         vignetteCurve = AnimationCurve.EaseInOut(0, 0, 2.0f, 100);
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -42,6 +47,14 @@ public class InteractWithOthers : MonoBehaviour
             float vignetteIntensity = vignetteCurve.Evaluate(normalizedTime);
             Debug.Log("vignetteIntensity: " + vignetteIntensity);
             vignette.intensity.value = vignetteIntensity;
+
+            playerStartPosition = player.transform.position;
+
+            // Store the player's position in PlayerPrefs
+            PlayerPrefs.SetFloat("PlayerPosX", playerStartPosition.x);
+            PlayerPrefs.SetFloat("PlayerPosY", playerStartPosition.y);
+            PlayerPrefs.SetFloat("PlayerPosZ", playerStartPosition.z);
+
             if (vignetteIntensity > 2)
             {
                 SceneManager.LoadScene(scenename);
@@ -53,6 +66,8 @@ public class InteractWithOthers : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
+            string name = transform.parent.name;
+            text.GetComponent<TextMeshProUGUI>().text = $"Hold E to Enter {name}'s Mind"; // Update the text with the parent name
             text.SetActive(true);
             entered = true;
         }
