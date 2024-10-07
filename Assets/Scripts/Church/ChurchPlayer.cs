@@ -15,6 +15,7 @@ namespace Church
         [SerializeField] private Animator playerAnim;
 
         private bool _isFalling;
+        private bool _isBacking;
         
         private void Awake()
         {
@@ -50,13 +51,15 @@ namespace Church
                 playerAnim.SetBool("IsWalking", true);
             }
 
-            if (Input.GetAxisRaw("Vertical").Equals(1))
+            if (Input.GetAxisRaw("Vertical").Equals(1) && _isBacking)
             {
                 playerAnim.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                _isBacking = false;
             }
-            if (Input.GetAxisRaw("Vertical").Equals(-1))
+            if (Input.GetAxisRaw("Vertical").Equals(-1) && !_isBacking)
             {
                 playerAnim.transform.rotation = Quaternion.Euler(Vector3.zero);
+                _isBacking = true;
             }
         }
     }

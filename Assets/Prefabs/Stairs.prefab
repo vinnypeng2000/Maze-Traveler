@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.292768, y: 1, z: 1.5013036}
+  m_Center: {x: -0.353616, y: 0, z: 0.019270927}
 --- !u!1 &3613435984430618585
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1333125037829216956
 Transform:
   m_ObjectHideFlags: 0
@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78492b9a72331e40a303ef089f8471f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stairs: {fileID: 3613435984430618585}
+  mesh1: {fileID: 3053573854662226331}
+  mesh2: {fileID: 1461498704768892604}
 --- !u!1 &8855505570861633651
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,8 +208,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.23296309, y: 1, z: 1.4097472}
+  m_Center: {x: 0.38351846, y: 0, z: 0.01183357}
 --- !u!1001 &1361659549799976025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,6 +266,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4072924339087310274, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9045402612903562161, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -275,6 +280,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
+--- !u!23 &3053573854662226331 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4072924339087310274, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
+  m_PrefabInstance: {fileID: 1361659549799976025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4191538310210915060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2940502869411399341, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
@@ -336,6 +346,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4072924339087310274, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9045402612903562161, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -349,5 +363,10 @@ PrefabInstance:
 --- !u!4 &289186438244632019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2940502869411399341, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
+  m_PrefabInstance: {fileID: 3228419367421477758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1461498704768892604 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4072924339087310274, guid: 8b0c9ec2384bb4bd08ffbc3c020b64c5, type: 3}
   m_PrefabInstance: {fileID: 3228419367421477758}
   m_PrefabAsset: {fileID: 0}

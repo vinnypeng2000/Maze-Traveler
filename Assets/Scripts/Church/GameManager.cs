@@ -9,10 +9,10 @@ namespace Church
 {
     public class GameManager : MonoBehaviour
     {
-        public GameObject backWalls;
+        public GameObject backWall;
+        public GameObject roof;
         public GameObject stairs;
         public Volume volume;
-        public float decSpeed;
         
         private void Awake()
         {
@@ -22,17 +22,14 @@ namespace Church
 
         private void OnRiseEvent()
         {
-            backWalls.SetActive(false);
+            backWall.SetActive(false);
+            roof.SetActive(false);
             stairs.SetActive(true);
         }
 
         private void OnFallEvent()
         {
-            var stairsGameObjects = GameObject.FindGameObjectsWithTag("Stair");
-            foreach (var stairsGameObject in stairsGameObjects)
-            {
-                stairsGameObject.SetActive(false);
-            }
+            stairs.SetActive(false);
 
             volume.profile.TryGet(out LensDistortion lensDistortion);
             DOTween.To(() => lensDistortion.intensity.value, value => lensDistortion.intensity.value = value, 1, 3);
