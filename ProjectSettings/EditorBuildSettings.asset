@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Elliot.unity
     guid: 6ae452462b6fd1744b2a9aa27f32e994
+  - enabled: 1
+    path: Assets/Scenes/Tongue.unity
+    guid: 3240de91dc1c75943b64f6200f77f3cf
   m_configObjects: {}

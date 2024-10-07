@@ -1,40 +1,42 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MollyTongue : MonoBehaviour
+namespace Tongue
 {
-    private bool _isNearPlayer;
-    private bool _isTriggered;
+    public class MollyTongue : MonoBehaviour
+    {
+        public Image exitBlackFade;
+        
+        private bool _isNearPlayer;
+        private bool _isTriggered;
     
-    private void Update()
-    {
-        if (_isNearPlayer && !_isTriggered && Input.GetKeyDown(KeyCode.E))
+        private void Update()
         {
-            _isTriggered = true;
-            StartCoroutine(FinishInteractive());
+            if (_isNearPlayer && !_isTriggered && Input.GetKeyDown(KeyCode.E))
+            {
+                _isTriggered = true;
+                exitBlackFade.gameObject.SetActive(true);
+                exitBlackFade.DOFade(1, 5f).OnComplete(()=> SceneManager.LoadScene("Party"));
+            }
         }
-    }
 
-    private IEnumerator FinishInteractive()
-    {
-        yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("Party");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        private void OnTriggerEnter(Collider other)
         {
-            _isNearPlayer = true;
+            if (other.CompareTag("Player"))
+            {
+                _isNearPlayer = true;
+            }
         }
-    }
     
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        private void OnTriggerExit(Collider other)
         {
-            _isNearPlayer = false;
+            if (other.CompareTag("Player"))
+            {
+                _isNearPlayer = false;
+            }
         }
     }
 }

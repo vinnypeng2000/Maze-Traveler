@@ -1,44 +1,49 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
-public class SarahTongue : MonoBehaviour
+namespace Tongue
 {
-    public GameObject molly;
-    
-    private bool _isNearPlayer;
-    private bool _isTriggered;
-    
-    private void Update()
+    public class SarahTongue : MonoBehaviour
     {
-        if (_isNearPlayer && !_isTriggered && Input.GetKeyDown(KeyCode.E))
+        public GameObject molly;
+        public GameObject sarahWall;
+        public Transform mollyTongue;
+    
+        private bool _isNearPlayer;
+        private bool _isTriggered;
+    
+        private void Update()
         {
-            _isTriggered = true;
-            StartCoroutine(FinishInteractive());
+            if (_isNearPlayer && !_isTriggered && Input.GetKeyDown(KeyCode.E))
+            {
+                _isTriggered = true;
+                StartCoroutine(FinishInteractive());
+            }
         }
-    }
 
-    private IEnumerator FinishInteractive()
-    {
-        yield return new WaitForSeconds(3f);
-        molly.SetActive(true);
-        transform.parent.gameObject.SetActive(false);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        private IEnumerator FinishInteractive()
         {
-            _isNearPlayer = true;
+            yield return new WaitForSeconds(3f);
+            molly.SetActive(true);
+            sarahWall.SetActive(false);
+            mollyTongue.DOScale(new Vector3(5, 5, 120), 3);
         }
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+
+        private void OnTriggerEnter(Collider other)
         {
-            _isNearPlayer = false;
+            if (other.CompareTag("Player"))
+            {
+                _isNearPlayer = true;
+            }
+        }
+    
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _isNearPlayer = false;
+            }
         }
     }
 }

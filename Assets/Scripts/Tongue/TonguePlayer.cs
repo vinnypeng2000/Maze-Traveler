@@ -9,10 +9,6 @@ namespace Tongue
         [SerializeField] private Animator playerAnim;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CharacterController characterController;
-        
-        private bool _isBacking;
-        private bool _isLefting;
-        private bool _isTongueStatus;
 
         private void Awake()
         {
@@ -26,17 +22,10 @@ namespace Tongue
 
         private void OnTongueEvent()
         {
-            _isTongueStatus = true;
-            playerController.moveSpeed = 25f;
-            //characterController.enabled = false;
-            playerAnim.SetBool("IsWalking", false);
-            playerAnim.gameObject.SetActive(false);
-            tongue.SetActive(true);
         }
 
         private void MoveAnim()
         {
-            if(_isTongueStatus) return;
             
             if (Input.GetAxisRaw("Horizontal").Equals(0) && Input.GetAxisRaw("Vertical").Equals(0))
             {
