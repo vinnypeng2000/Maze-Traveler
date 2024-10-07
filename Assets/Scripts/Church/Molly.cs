@@ -7,6 +7,7 @@ namespace Church
     public class Molly : MonoBehaviour
     {
         public Transform[] pathPos;
+        public float riseSpeed = 22.5f;
         
         private bool _isNearPlayer;
         private bool _isRising;
@@ -36,7 +37,7 @@ namespace Church
                 pathVectors[i] = pathPos[i].position + new Vector3(0, 3f, 0);
             }
 
-            transform.DOPath(pathVectors, 22.5f);
+            transform.DOPath(pathVectors, riseSpeed);
             // transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
             // transform.DOLocalMove(new Vector3(0.27363804f,1.48200035f,3.35067821f), 1f);
         }
