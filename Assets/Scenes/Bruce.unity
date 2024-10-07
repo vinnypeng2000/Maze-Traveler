@@ -13788,6 +13788,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 667939670968626814, guid: 217ba041937b501488776d147120e9cd, type: 3}
+      propertyPath: mouseSensitivity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2636354666842360684, guid: 217ba041937b501488776d147120e9cd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -25484,6 +25488,7 @@ MonoBehaviour:
   - {fileID: 1784814246}
   - {fileID: 1416221579}
   - {fileID: 535300771}
+  riseSpeed: 22.5
 --- !u!4 &2053078902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4145dd40c44e62a428220bc066aeb095, type: 3}
