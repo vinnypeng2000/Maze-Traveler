@@ -5245,8 +5245,12 @@ PrefabInstance:
       objectReference: {fileID: 2064601495}
     - target: {fileID: 8097503197010015743, guid: dc90802d03e549c4080321ca4b7f4d59, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8097503197010015743, guid: dc90802d03e549c4080321ca4b7f4d59, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 63d4d134e9467334b8252cbd173505f8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13455,7 +13459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  jumpForce: 350
+  jumpForce: 250
   anim: {fileID: 0}
   mouseSensitivity: 2
   cameraTransform: {fileID: 2064601496}
