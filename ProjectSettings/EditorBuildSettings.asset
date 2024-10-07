@@ -17,12 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chad.unity
     guid: 3240de91dc1c75943b64f6200f77f3cf
-    path: Assets/Scenes/Peter.unity
-    guid: f5a49955db58ec4459bb41f42406a0b8
   - enabled: 1
     path: Assets/Scenes/Vinny.unity
     guid: 2151eae7ebf2a59418b4b8da088205b1
   - enabled: 1
     path: Assets/Scenes/Molly.unity
     guid: 12d88da6a17da174898799bc175de530
+  - enabled: 1
+    path: Assets/Scenes/Sarah.unity
+    guid: 15f46160c48c5f44abaa8cfb123bbe64
+  - enabled: 1
+    path: Assets/Scenes/Peter.unity
+    guid: f5a49955db58ec4459bb41f42406a0b8
+  - enabled: 1
+    path: Assets/Scenes/Bruce.unity
+    guid: 43ef562e3dfba7b4cba1b37d2a76d45a
   m_configObjects: {}

@@ -11025,7 +11025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 977654580}
-  scenename: 
+  scenename: Vinny
   entered: 0
   volume: {fileID: 806846258}
   vignetteCurve:
@@ -15128,7 +15128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 977654580}
-  scenename: 
+  scenename: Molly
   entered: 0
   volume: {fileID: 806846258}
   vignetteCurve:
