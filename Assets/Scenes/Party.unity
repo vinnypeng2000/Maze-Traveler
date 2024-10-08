@@ -17086,7 +17086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 977654580}
-  scenename: 
+  scenename: Bruce
   entered: 0
   volume: {fileID: 806846258}
   vignetteCurve:
@@ -18946,7 +18946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 977654580}
-  scenename: 
+  scenename: Sarah
   entered: 0
   volume: {fileID: 806846258}
   vignetteCurve:
@@ -19504,6 +19504,10 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 806846258}
+    - target: {fileID: 3631953124119948438, guid: 1c8e37a9b892a6c459a4c61247f2e90a, type: 3}
+      propertyPath: scenename
+      value: Chad
+      objectReference: {fileID: 0}
     - target: {fileID: 6129411742931168823, guid: 1c8e37a9b892a6c459a4c61247f2e90a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.511
